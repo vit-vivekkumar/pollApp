@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+ {% block content %}
+
+       
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                               
+                                <div class="p-4 border shadow-sm rounded">
+                                    <h4 class="card-title">User Profile</h4>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6 border-right">
+                                            <ul class="list-style-none">
+                                                <li class="my-2 border-bottom pb-3">
+                                                    <span class="font-weight-medium text-dark">User Details:</span>
+                                                </li>
+                                                <li class="my-3">
+                                                    <span></i>Username: {{user.username}}</span>
+                                                </li>
+                                                <li class="my-3">
+                                                    <span></i>Email: {{user.email}}</span>
+                                                </li>
+                                                   
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="list-style-none">
+                                                <li class="my-2 border-bottom pb-3">
+                                                    <span class="font-weight-medium text-dark"><i class="icon-note mr-2 text-danger"></i>User Created Polls List:</span>
+                                                </li>
+                                    {% for poll in all_polls %}
+                                                <li class="my-3">
+                                                    <span><i class="icon-pencil mr-2 text-danger"></i> {{ poll.text|truncatewords:5 }}</span>
+                                                </li>
+                                    {% endfor %}   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            
+ {% endblock content %}
